@@ -445,7 +445,7 @@ function setActive(id){
 function focusStop(id, open){
   var s=byId[id]; if(!s) return;
   setActive(id);
-  map.flyTo(s.ll, id==='nagarkot'||id==='changu'?13:15, {duration:.9});
+  map.flyTo(s.ll, id==='nagarkot'||id==='changu'?12:13, {duration:.9});
   if(open){ var m = markers[id==='home'?'ktm':id]; if(m) setTimeout(function(){m.openPopup();},950); }
 }
 function setDay(d){
