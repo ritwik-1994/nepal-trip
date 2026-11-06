@@ -158,11 +158,11 @@ footer a{color:var(--muted)}
   <div class="in">
     <div class="kicker">Kathmandu Valley · 30 Dec 2026 to 3 Jan 2027</div>
     <h1>Nepal for two</h1>
-    <p>Old Newari courtyards, butter lamps at Boudha, a poker table on New Year's Eve, and two quiet nights facing the Himalayas. Follow the dashed line.</p>
+    <p>Cook momos in a Newari home, ride a cable car to the Himalayas, throw a pot together, play poker on New Year's Eve, and end with two quiet nights facing the mountains. Follow the dashed line.</p>
     <div class="stats">
       <div class="stat"><b>5 days</b>4 nights</div>
       <div class="stat"><b>10 stops</b>on one map</div>
-      <div class="stat"><b>≈ ₹96,400</b>total for two</div>
+      <div class="stat"><b>≈ ₹97,400</b>total for two</div>
     </div>
   </div>
 </section>
@@ -203,21 +203,24 @@ footer a{color:var(--muted)}
       <tr><td>Yamba Traditional Home, Patan, 1 night<span class="src">live</span></td><td class="n">3,495</td></tr>
       <tr><td>Sabila Boutique Hotel, Boudha, 1 night<span class="src">live</span></td><td class="n">2,645</td></tr>
       <tr><td>The Fort Resort, Nagarkot, 2 nights<span class="src">live</span></td><td class="n">17,949</td></tr>
-      <tr><td>Cars and taxis<span class="src">estimate</span></td><td class="n">8,000</td></tr>
-      <tr><td>Food and drinks (breakfast included everywhere)<span class="src">estimate</span></td><td class="n">12,000</td></tr>
-      <tr><td>Entry fees (SAARC rates) and couples massage<span class="src">estimate</span></td><td class="n">5,500</td></tr>
+      <tr><td>Cars and taxis<span class="src">estimate</span></td><td class="n">9,000</td></tr>
+      <tr><td>Food, drinks and tongba (breakfast included everywhere)<span class="src">estimate</span></td><td class="n">10,000</td></tr>
+      <tr><td>Momo cooking class for two<span class="src">listed $17–35 pp</span></td><td class="n">4,500</td></tr>
+      <tr><td>Chandragiri cable car, round trip<span class="src">guides: NPR 1,280 pp</span></td><td class="n">1,600</td></tr>
+      <tr><td>Pottery wheel lesson<span class="src">reported NPR 300 pp</span></td><td class="n">400</td></tr>
+      <tr><td>Gate fees, Patan and Bhaktapur (SAARC)<span class="src">estimate</span></td><td class="n">1,000</td></tr>
       <tr><td>Poker, a fixed limit</td><td class="n">5,000</td></tr>
-      <tr class="total"><td>Total</td><td class="n">≈ ₹96,400</td></tr>
+      <tr class="total"><td>Total</td><td class="n">≈ ₹97,400</td></tr>
     </table>
   </div>
-  <p class="sub" style="margin-top:10px">With Hotel Green Valley in Nagarkot instead of The Fort Resort: ≈ ₹85,200.</p>
+  <p class="sub" style="margin-top:10px">Optional extras: singing-bowl session at Boudha (≈ ₹6,300 for two) and a couples massage in Nagarkot (≈ ₹3,000). Swap to Hotel Green Valley in Nagarkot to drop the total to ≈ ₹86,200.</p>
 
   <h2>Before you go</h2>
   <div class="tips" style="margin-top:16px">
     <div class="tip"><h3>Documents</h3>No visa for Indians. Carry both passports: the casino requires them.</div>
     <div class="tip"><h3>Money</h3>UPI works at many shops through Fonepay QR codes. Carry a forex card and some cash in Nepali rupees for gate tickets. Check the current limits on bringing ₹200 and ₹500 notes into Nepal.</div>
     <div class="tip"><h3>Weather</h3>Sunny days around 18 to 20°C. Nights near freezing, colder in Nagarkot. Pack down jackets.</div>
-    <div class="tip"><h3>Still estimates</h3>Transport, food, massage, gate fees and the casino's New Year's Eve rules. Travel times are approximate.</div>
+    <div class="tip"><h3>Still estimates</h3>Transport, food, gate fees, class and cable-car prices, and the casino's New Year's Eve rules. Travel times are approximate.</div>
   </div>
 </div>
 
@@ -226,10 +229,10 @@ footer a{color:var(--muted)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 var DAYS = [
-  {n:1, date:'Wed 30 Dec', title:'Land, and slow down in Patan', sub:'Fly in, hidden courtyards, sunset over the temples'},
-  {n:2, date:'Thu 31 Dec', title:'Valley views, butter lamps, New Year’s poker', sub:'Hilltop stupa, a quiet garden, Boudha at dusk, casino night'},
-  {n:3, date:'Fri 1 Jan', title:'Bhaktapur, then up into the mountains', sub:'Medieval city, king curd, Himalayan sunset'},
-  {n:4, date:'Sat 2 Jan', title:'Sunrise and a hidden temple', sub:'Village hike to Nepal’s oldest temple, massage, bonfire'},
+  {n:1, date:'Wed 30 Dec', title:'Land, then cook momos in Patan', sub:'Old-town lanes, a cooking class in a local home, rooftop drinks'},
+  {n:2, date:'Thu 31 Dec', title:'Cable car, street food, New Year’s poker', sub:'Himalaya from Chandragiri, a bazaar momo crawl, Boudha at dusk, casino night'},
+  {n:3, date:'Fri 1 Jan', title:'Throw a pot, then up into the mountains', sub:'Pottery wheel in Bhaktapur, king curd, Himalayan sunset, tongba by the fire'},
+  {n:4, date:'Sat 2 Jan', title:'Village trails and a lazy afternoon', sub:'Hike through Tamang villages, home-style lunch, bonfire and stars'},
   {n:5, date:'Sun 3 Jan', title:'One more sunrise, then home', sub:'Slow morning, afternoon flight'}
 ];
 
@@ -250,46 +253,47 @@ var STOPS = [
     what:'IndiGo nonstop from Delhi, 1 hr 50 min.',
     todo:['Take a window seat on the left side (A) on the way in: the Himalayas are to the north.','No visa for Indians. Show your passport at immigration.','Your Patan hotel pickup waits outside arrivals.'],
     leg:'🚗  45 min drive to Patan'},
-  {id:'golden', day:1, time:'Afternoon', title:'Golden Temple & Kumbheshwar', tag:'Hidden gem', ll:[27.6758,85.3250], img:['golden','kumbheshwar'],
-    what:'A 12th-century Buddhist monastery tucked inside a courtyard just north of Patan’s main square, and a five-tiered temple with a sacred pond a few lanes further on.',
-    todo:['Drop bags at Yamba, then walk up through the lanes.','Spin the prayer wheels and look up at the gilded roof.','Wander the small courtyards (bahals) in between. Most visitors never find them.'],
-    leg:'🚶  5 min walk to the square'},
-  {id:'patan', day:1, time:'Sunset and night', title:'Patan Durbar Square', ll:[27.6734,85.3250], img:['pataneve'],
-    what:'The old royal square of Patan, a city of Newar artisans. More intact and calmer than Kathmandu’s own Durbar Square.',
-    todo:['Walk the square as the light turns gold.','Peek into the Patan Museum courtyard.','Dinner on a rooftop facing the temples.'],
-    moment:'Watch the temples light up from your rooftop table. The most romantic first night in the valley.',
-    stay:'yamba', leg:'🚗  Next morning: 30 min drive to Swayambhu'},
-  {id:'swayambhu', day:2, time:'7 AM', title:'Swayambhunath', ll:[27.7149,85.2904], img:['swayambhu'],
-    what:'The hilltop stupa with Buddha’s painted eyes, also called the monkey temple. The whole valley is laid out below.',
-    todo:['Climb the long eastern stairway while it is still quiet.','Walk around the stupa clockwise.','Find a ledge and watch the valley wake up.'],
-    moment:'Early morning light over Kathmandu, before the crowds and the haze.',
-    leg:'🚗  20 min drive to Thamel'},
-  {id:'garden', day:2, time:'Late morning', title:'Garden of Dreams', ll:[27.7139,85.3156], img:['garden'],
+  {id:'patan', day:1, time:'Afternoon to night', title:'Momo class in Patan', tag:'Food', ll:[27.6734,85.3250], img:['momo','pataneve'],
+    what:'Patan is a city of Newar craftspeople, full of courtyards, workshops and family kitchens. You learn to cook in one of them.',
+    todo:['Drop bags at Yamba, then a slow lunch and a wander through the lanes and courtyards.','Afternoon momo class with a local family: walk the market, pick spices, fold your own momos, then eat what you made. Patan Community Stay runs one nearby ($35 per person).','After dark, drinks on a rooftop above the lit-up old square.'],
+    moment:'Cooking side by side in a Nepali home kitchen, then a nightcap over the old town.',
+    stay:'yamba', leg:'🚗  Next morning: 45 min drive to the cable car'},
+  {id:'chandragiri', day:2, time:'Morning', title:'Chandragiri cable car', tag:'Views', ll:[27.6655,85.2105], approx:true, img:['cablecar','cableview'],
+    what:'A 2.5 km cable car up to a 2,500 m ridge on the valley’s edge. On a clear morning the whole Himalayan range lines the horizon.',
+    todo:['Go early: mornings in late December are the clearest.','Round trip about NPR 1,280 per person at the SAARC rate, per travel guides. Check at the counter.','Coffee or breakfast at the top while the mountains catch the sun.'],
+    moment:'Gliding up over the forest together, then the whole range at the top.',
+    leg:'🚗  40 min drive into the old city'},
+  {id:'asan', day:2, time:'Lunch', title:'Asan bazaar momo crawl', tag:'Street food', ll:[27.7075,85.3118], approx:true, img:['asan','streetmomo','asanfood'],
+    what:'Kathmandu’s oldest market crossroads: spice sellers, rickshaws, tiny momo shops and centuries of trade.',
+    todo:['Graze instead of sitting down: momos, sel roti (rice doughnuts), chatamari (Newari “pizza”).','Pick up tea, spices or a pashmina to take home.','Hold hands: the lanes are crowded.'],
+    leg:'🚶  15 min walk to the garden'},
+  {id:'garden', day:2, time:'Afternoon', title:'Garden of Dreams', ll:[27.7139,85.3156], img:['garden'],
     what:'A restored 1920s garden of lawns, pavilions and fountains at the edge of busy Thamel.',
-    todo:['Long brunch at the garden café.','Bring a book, find a lawn, do nothing for an hour.'],
+    todo:['Coffee at the garden café.','Find a lawn and rest for an hour before the big night.'],
     leg:'🚗  30 min drive to Boudha'},
-  {id:'boudha', day:2, time:'Dusk', title:'Boudhanath Stupa', ll:[27.7214,85.3619], img:['boudha','boudhalamp','boudharoof'],
-    what:'One of the largest stupas in the world and the centre of Tibetan life in Nepal.',
-    todo:['Check in at Sabila, 250 m away.','At dusk, walk the circuit around the stupa clockwise with the pilgrims.','Light a butter lamp together.','Dinner on a rooftop that faces the stupa.'],
-    moment:'Hundreds of butter lamps, chanting, prayer flags overhead. Make a wish for the new year.',
+  {id:'boudha', day:2, time:'Dusk', title:'Boudha at dusk', ll:[27.7214,85.3619], img:['boudha','bowl','boudhalamp'],
+    what:'The heart of Tibetan life in Kathmandu: monasteries, tea shops and a giant white dome at the centre.',
+    todo:['Check in at Sabila, 250 m away.','At dusk, join the crowd walking clockwise around the dome, then light a butter lamp together.','Optional: a singing-bowl sound session for two. Kathmandu listings run about $35 per person.','Dinner on a rooftop facing the lights.'],
+    moment:'Prayer flags, chanting and hundreds of lamps on the last evening of the year.',
     stay:'sabila', leg:'🚶  10 min walk to the casino'},
   {id:'casino', day:2, time:'10 PM onwards', title:'NYE at Casino Pride', tag:'Party', ll:[27.7166,85.3574], approx:true, img:['thamel'],
     what:'The casino inside the Hyatt Regency, described as Nepal’s busiest poker room. Open to foreign tourists, including Indians.',
     todo:['Carry both passports.','Set a ₹5,000 limit before you sit down.','Ask ahead about New Year’s Eve entry and which poker games are running.','Want a louder street party? Thamel (photo) is 20 min away.'],
     moment:'Count down to 2027 together, then a short walk back to Sabila.',
     leg:'🚗  Next day: 40 min drive to Bhaktapur'},
-  {id:'bhaktapur', day:3, time:'Late morning to afternoon', title:'Bhaktapur', ll:[27.6720,85.4281], img:['bhaktapur','nyatapola','jujudhau'],
-    what:'The best-preserved medieval city in the valley: brick squares, carved windows, potters at work.',
-    todo:['Nyatapola, the five-tiered temple, the tallest pagoda in Nepal.','Durbar Square and Pottery Square.','Juju dhau, the “king curd”, served in a clay cup.','Rooftop lunch overlooking Taumadhi Square.'],
+  {id:'bhaktapur', day:3, time:'Late morning', title:'Pottery wheel in Bhaktapur', tag:'Hands-on', ll:[27.6712,85.4290], img:['pottery','bhaktapur','jujudhau'],
+    what:'A medieval brick city where potters still work in the open around Pottery Square.',
+    todo:['Sit down at a potter’s wheel and shape a pot together. Local studios have charged about NPR 300 per person.','Juju dhau, the “king curd”, served in a clay cup.','Wander the brick lanes, then a rooftop lunch.'],
+    moment:'Four hands on one lump of spinning clay. Messy, and the best photo of the trip.',
     leg:'🚗  40 min drive up to Nagarkot'},
-  {id:'nagarkot', day:3, time:'Sunset · 2 nights', title:'Nagarkot · The Fort Resort', ll:[27.7170,85.5200], img:['nagarkot','nagarkot2'],
+  {id:'nagarkot', day:3, time:'Sunset · 2 nights', title:'Nagarkot · The Fort Resort', ll:[27.7170,85.5200], img:['nagarkot','nagarkot2','tongba'],
     what:'A ridge on the valley’s eastern rim with a view along the Himalayan range, as far as Everest on a clear day.',
-    todo:['Sunset over the mountains from the resort.','Dinner by the fire.','Wake up for sunrise both mornings. Late December has the clearest views of the year.'],
-    moment:'Sunset over the Himalayas and a fire to yourselves. The quiet half of the trip starts here.',
-    stay:'fort', leg:'🥾  Next morning: 3–4 hr downhill hike'},
-  {id:'changu', day:4, time:'Morning hike', title:'Changu Narayan', tag:'Hidden gem', ll:[27.7163,85.4279], img:['changu'],
-    what:'A UNESCO-listed hilltop temple. Its stone pillar carries Nepal’s oldest known inscription, from 464 AD.',
-    todo:['Hike down from Nagarkot through terraced farms and villages.','Explore the temple’s carved stone and wood. Far fewer people than the city squares.','Taxi back up to the resort, about 40 min.','Couples massage in the afternoon, bonfire and stargazing at night.'],
+    todo:['Sunset over the mountains from the resort.','Try tongba: warm millet beer sipped through a bamboo straw, topped up with hot water.','Dinner by the fire. Get up for sunrise both mornings.'],
+    moment:'Sunset over the Himalayas, a shared tongba and a fire to yourselves.',
+    stay:'fort', leg:'🥾  Next morning: 2.5–3 hr village hike'},
+  {id:'telkot', day:4, time:'Morning', title:'Tamang village hike', tag:'Hidden gem', ll:[27.7115,85.4615], approx:true, img:['village'],
+    what:'Trails along the ridge from Nagarkot to Telkot, through terraced farms and Tamang villages most visitors never walk through.',
+    todo:['Ask the resort for the trail or a local guide.','Lunch at a village teahouse: dal bhat, the national meal.','Taxi back up to the resort, about 30 min.','Afternoon off: a nap, a book, sun on the terrace. A couples massage is an optional extra.','Bonfire and stargazing at night.'],
     moment:'A whole day with no plan except each other, the mountains and the fire.',
     leg:'🚗  Day 5: leave at 12:30 PM, 1.5 hr to the airport'},
   {id:'home', day:5, time:'5:10 PM to 6:45 PM', title:'Home to Delhi', ll:[27.6966,85.3591], img:[],
@@ -298,30 +302,34 @@ var STOPS = [
 ];
 
 var EDGES = [
-  ['del','ktm','flight',1],['ktm','golden','drive',1],['golden','patan','walk',1],
-  ['patan','swayambhu','drive',2],['swayambhu','garden','drive',2],['garden','boudha','drive',2],['boudha','casino','walk',2],
+  ['del','ktm','flight',1],['ktm','patan','drive',1],
+  ['patan','chandragiri','drive',2],['chandragiri','asan','drive',2],['asan','garden','walk',2],['garden','boudha','drive',2],['boudha','casino','walk',2],
   ['casino','bhaktapur','drive',3],['bhaktapur','nagarkot','drive',3],
-  ['nagarkot','changu','hike',4],['changu','nagarkot','drive',4],
+  ['nagarkot','telkot','hike',4],['telkot','nagarkot','drive',4],
   ['nagarkot','home','drive',5],['home','del','flight',5]
 ];
 
 var CREDITS = {
   nagarkot2:['Jean-Pierre Dalbéra','CC BY 2.0','File:Le_Langtang_Lirung_(Himalaya,_Népal)_(8448200379).jpg'],
   airport:['Bijay Chaurasia','CC BY-SA 4.0','File:Buddha_&_Shree_airlines_aircrafts_at_Tribhuvan_International_Airport_(TIA)-070A2336.jpg'],
-  golden:['Allie_Caulfield','CC BY 2.0','File:2015-03-30_04-15_Nepal_926_Patan,_Lalitpur,_Golden_Temple_(16769604853).jpg'],
-  kumbheshwar:['Chainwit.','CC BY-SA 4.0','File:A_morning_at_Kumbeshwar_Temple,_Patan_(January_2023)_-_IMG_09.jpg'],
+  momo:['Gaurav Dhwaj Khadka','CC BY-SA 4.0','File:Buff_Momos.jpg'],
   pataneve:['Mithunkunwar9','CC BY-SA 4.0','File:Patan_Durbar_Square_2020_evening.jpg'],
-  swayambhu:['Nabin K. Sapkota','CC BY-SA 4.0','File:Swayambhunath_2018.jpg'],
+  cablecar:['Sona Shrestha','CC BY-SA 4.0','File:Chadragiri_Cable_Car.jpg'],
+  cableview:['Dhruba Sanyam Rai','CC BY-SA 4.0','File:From_Chandragiri_Cable_Car.jpg'],
+  asan:['Juan Antonio Segal','CC BY 2.0','File:Kathmandu,_Nepal_(23373577879).jpg'],
+  asanfood:['Juan Antonio Segal','CC BY 2.0','File:Kathmandu,_Nepal_(23659155691).jpg'],
+  streetmomo:['SristiAwasthi21','CC0','File:Steam_Momo_–_Traditional_Nepalese_Dumpling.jpg'],
   garden:['Krish Dulal','CC BY-SA 3.0','File:Garden_of_Dreams.jpg'],
   boudha:['Sumitbhatt222','CC BY-SA 4.0','File:Boudhanath_stupa_,_Kathmandu,_Nepal.jpg'],
+  bowl:['Swarnima Shrestha','CC BY-SA 4.0','File:Singing_Bowl.jpg'],
   boudhalamp:['Gaurav Dhwaj Khadka','CC BY-SA 4.0','File:Boudhanath_Stupa_and_Butter_Lamp.jpg'],
-  boudharoof:['Vitbaisa','CC BY-SA 4.0','File:Boudhanath_stoupa_from_a_roof.JPG'],
   thamel:['Saddam Hussain Ansari','CC BY 4.0','File:Thamel_at_Night_-_Kathmandu,_Nepal_(1).jpg'],
+  pottery:['Draavyam','CC BY-SA 4.0','File:The_wheel_of_kumale.jpg'],
   bhaktapur:['Bikram Pratap Singh','CC BY-SA 3.0','File:View_of_Bhaktapur_Durbar_Square.jpg'],
-  nyatapola:['Thomas Fuhrmann','CC BY-SA 3.0','File:Kathmandu_und_Bhaktapur_2013-05-11_16-03-39.jpg'],
   jujudhau:['Gaurav Dhwaj Khadka','CC BY-SA 4.0','File:Juju_Dhau.jpg'],
   nagarkot:['Navina Dulal','CC BY-SA 3.0','File:@_Nagarkot.jpg'],
-  changu:['Dhilung Kirat','CC BY 2.0','File:Nepal_-_Changu_Narayan_(3566057331).jpg']
+  tongba:['Bhattaraibinod3','CC BY-SA 4.0','File:Nepali_Tongba_-_Nepalese_fermented_millet_beer.JPG'],
+  village:['Bijay Chaurasia','CC BY-SA 4.0','File:Nagarkot_hill-2539.jpg']
 };
 
 var CHECKS = [
@@ -329,8 +337,9 @@ var CHECKS = [
   {k:'patan', t:'2. Yamba Traditional Home, Patan', p:'₹3,495', d:'30 Dec, 1 night. Double room, breakfast, rated 9.6.', a:STAYS.yamba.url, l:'Open on Booking.com'},
   {k:'boudha', t:'3. Sabila Boutique Hotel, Boudha', p:'₹2,645', d:'31 Dec, 1 night. Breakfast, rated 9.7.', a:STAYS.sabila.url, l:'Open on Booking.com'},
   {k:'nagarkot', t:'4. The Fort Resort, Nagarkot', p:'₹17,949', d:'1 to 3 Jan, 2 nights. Mountain-view room, breakfast, rated 9.3. Cheaper option: Hotel Green Valley at ₹6,802.', a:STAYS.fort.url, l:'Open on Booking.com'},
-  {k:'cars', t:'5. Ask the hotels for transfers', p:'≈ ₹8,000', d:'Yamba: airport pickup on 30 Dec. Sabila: a car on 1 Jan, Boudha → Bhaktapur → Nagarkot. Fort Resort: taxi back from Changu Narayan on 2 Jan, and the airport drop at 12:30 PM on 3 Jan.'},
-  {k:'casino', t:'6. Check Casino Pride’s New Year’s Eve', p:'₹5,000 limit', d:'Ask about New Year’s Eve entry and which poker games are running. Backup: Deltin Casino at the Marriott.'}
+  {k:'cooking', t:'5. Momo cooking class, 30 Dec afternoon', p:'≈ ₹4,500', d:'Patan Community Stay runs one in Patan ($35 per person, includes a market walk and the meal). Kathmandu classes with hotel pickup start around $17 per person.', a:'https://communityhomestay.com/experiences/momo-cooking-class-patan', l:'See the Patan class'},
+  {k:'cars', t:'6. Ask the hotels for transfers', p:'≈ ₹9,000', d:'Yamba: airport pickup on 30 Dec, and a car for 31 Dec (Patan → Chandragiri → Asan → Boudha). Sabila: a car on 1 Jan to Bhaktapur and Nagarkot. Fort Resort: taxi back from Telkot on 2 Jan, airport drop at 12:30 PM on 3 Jan.'},
+  {k:'casino', t:'7. Check Casino Pride’s New Year’s Eve', p:'₹5,000 limit', d:'Ask about New Year’s Eve entry and which poker games are running. Backup: Deltin Casino at the Marriott.'}
 ];
 
 /* ---------- render ---------- */
@@ -405,7 +414,7 @@ function arc(a,b){
 var lines = EDGES.map(function(e){
   var a=byId[e[0]].ll, b=byId[e[1]].ll, pts;
   if(e[2]==='flight') pts = e[0]==='del' ? arc(a,b) : arc(a,b);
-  else if(e[0]==='changu' && e[1]==='nagarkot') pts=[a,[27.705,85.47],b];
+  else if(e[0]==='telkot' && e[1]==='nagarkot') pts=[a,[27.700,85.495],b];
   else pts=[a,b];
   var ln = L.polyline(pts,{color:LINEC[e[3]],weight:4,dashArray:DASH[e[2]],lineCap:'round',opacity:.95}).addTo(map);
   ln._day = e[3]; return ln;
@@ -447,7 +456,7 @@ function setActive(id){
 function focusStop(id, open){
   var s=byId[id]; if(!s) return;
   setActive(id);
-  map.flyTo(s.ll, id==='nagarkot'||id==='changu'?12:13, {duration:.9});
+  map.flyTo(s.ll, id==='nagarkot'||id==='telkot'||id==='chandragiri'?12:13, {duration:.9});
   if(open){ var m = markers[id==='home'?'ktm':id]; if(m) setTimeout(function(){m.openPopup();},950); }
 }
 function setDay(d){
