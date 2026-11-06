@@ -118,6 +118,8 @@ img{display:block;max-width:100%}
 .stay .l small{display:block;color:var(--muted);font-size:.8rem}
 .stay .l b{font-family:Fraunces,serif;font-size:1.05rem}
 .btn{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.85rem;white-space:nowrap}
+.mapwrap{scroll-margin-top:56px}
+.dayroute{margin-top:6px!important}
 .showmap{margin-top:12px;background:none;border:0;padding:0;color:var(--accent);font:600 .85rem Inter,sans-serif;cursor:pointer}
 @media (min-width:980px){.showmap{display:none}}
 .leg{position:relative;margin:8px 0 8px;font-size:.82rem;color:var(--muted);font-weight:500}
@@ -344,7 +346,7 @@ chips.innerHTML = '<button class="chip on" data-day="0">All days</button>' +
 var tl = document.getElementById('timeline'), html = '';
 DAYS.forEach(function(d){
   var stops = STOPS.filter(function(s){return s.day===d.n;});
-  html += '<div class="dayhead" id="day'+d.n+'" style="--c:'+dc(d.n)+'"><div class="badge">Day<b>'+d.n+'</b></div><h2>'+esc(d.title)+'</h2><p>'+esc(d.date)+' · '+esc(d.sub)+'</p></div>';
+  html += '<div class="dayhead" id="day'+d.n+'" style="--c:'+dc(d.n)+'"><div class="badge">Day<b>'+d.n+'</b></div><h2>'+esc(d.title)+'</h2><p>'+esc(d.date)+' · '+esc(d.sub)+'</p><button class="showmap dayroute" type="button" data-day="'+d.n+'">🗺 See Day '+d.n+'’s route on the map</button></div>';
   stops.forEach(function(s,i){
     var n = numOf[s.id], last = (s.id==='home');
     var ph = s.img.length ? '<div class="photos '+(s.img.length===1?'one':s.img.length===2?'two':'')+'">'+s.img.map(function(k,j){return '<img loading="lazy" src="img/'+k+'.jpg" alt="'+esc(s.title)+' photo '+(j+1)+'">';}).join('')+'</div>' : '';
@@ -466,6 +468,8 @@ chips.addEventListener('click',function(e){
   else map.flyToBounds(valleyBounds,{duration:1});
 });
 tl.addEventListener('click',function(e){
+  var dr=e.target.closest('.dayroute');
+  if(dr){ userMoved=true; document.getElementById('mapwrap').scrollIntoView({behavior:'smooth',block:'start'}); setDay(+dr.dataset.day); return; }
   var st=e.target.closest('.stop'); if(!st) return;
   if(e.target.closest('.num, .showmap')){
     userMoved=true;
