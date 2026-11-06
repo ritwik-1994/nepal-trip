@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nepal for Two</title>
+<meta name="description" content="5 days in the Kathmandu Valley, 30 Dec 2026 to 3 Jan 2027. Flights, hotels, day plan and budget.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6f0; --surface:#ffffff; --ink:#2a211c; --muted:#6f625a; --line:#e8ddd1;
+  --accent:#b4432b; --accent-soft:#f6e3dc; --gold:#a8792a; --ok:#2f7a4f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16120f; --surface:#211b17; --ink:#f1e9e1; --muted:#b3a59a; --line:#3a302a;
+    --accent:#e47a5f; --accent-soft:#3a231c; --gold:#d6a85a; --ok:#6cc595;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16120f; --surface:#211b17; --ink:#f1e9e1; --muted:#b3a59a; --line:#3a302a;
+  --accent:#e47a5f; --accent-soft:#3a231c; --gold:#d6a85a; --ok:#6cc595;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:0}
+h2{font-size:1.6rem;margin:56px 0 16px}
+h3{font-size:1.15rem}
+a{color:var(--accent)}
+.muted{color:var(--muted)}
+header{padding:56px 0 24px;border-bottom:1px solid var(--line)}
+.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--gold);font-weight:600}
+header h1{font-size:clamp(2.2rem,7vw,3.4rem);margin:8px 0 12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:.95rem}
+.facts b{font-weight:600}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.stack>*+*{margin-top:12px}
+/* booking checklist */
+.check{display:flex;gap:14px;align-items:flex-start}
+.check input{width:22px;height:22px;margin-top:3px;accent-color:var(--ok);flex:none}
+.check .body{flex:1;min-width:0}
+.check .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.price{font-weight:600;white-space:nowrap}
+.check.done h3{text-decoration:line-through;color:var(--muted)}
+.btn{display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:middle}
+/* days */
+.day{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:22px 0;border-top:1px solid var(--line)}
+.day:first-of-type{border-top:0}
+.date{font-family:Fraunces,Georgia,serif}
+.date .d{font-size:1.9rem;font-weight:700;line-height:1}
+.date .m{font-size:.85rem;color:var(--muted)}
+.day ul{margin:8px 0 0;padding-left:18px}
+.day li+li{margin-top:4px}
+.sleep{margin-top:10px;font-size:.9rem;color:var(--muted)}
+@media (max-width:560px){.day{grid-template-columns:1fr;gap:6px}.date{display:flex;gap:8px;align-items:baseline}}
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td,th{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+tr.total td{font-weight:700;border-bottom:0;font-size:1.05rem}
+.src{font-size:.75rem;color:var(--muted);font-weight:500}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+footer{margin:64px 0 40px;padding-top:20px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Kathmandu Valley · 30 Dec 2026 to 3 Jan 2027</div>
+  <h1>Nepal for two</h1>
+  <p class="muted">Old Newari courtyards, butter lamps at Boudha, a poker table on New Year's Eve, and two quiet nights facing the Himalayas.</p>
+  <div class="facts">
+    <span><b>5 days, 4 nights</b></span>
+    <span><b>≈ ₹96,400</b> for two</span>
+    <span>Prices checked <b>6 Nov 2026</b></span>
+  </div>
+</header>
+
+<h2>Book these, in this order</h2>
+<p class="muted">Flights first: they are non-refundable and rise fastest. All three hotels have free cancellation and pay-at-property, so lock them right after.</p>
+<div class="stack" id="checklist">
+
+  <div class="card check" data-key="flight">
+    <input type="checkbox" aria-label="Flights booked">
+    <div class="body">
+      <div class="top"><h3>1. Flights · IndiGo nonstop, round trip</h3><span class="price">₹41,774</span></div>
+      <div>Out <b>Wed 30 Dec</b> · Delhi 7:40 AM → Kathmandu 9:45 AM</div>
+      <div>Back <b>Sun 3 Jan</b> · Kathmandu 5:10 PM → Delhi 6:45 PM</div>
+      <div class="muted" style="font-size:.9rem">Total for 2 adults. Pick these exact times. Backup: Nepal Airlines from ₹43,474.</div>
+      <a class="btn" href="https://www.google.com/travel/flights?q=Flights%20from%20DEL%20to%20KTM%20on%202026-12-30%20through%202027-01-03%20for%202%20adults&curr=INR&hl=en" target="_blank" rel="noopener">Open in Google Flights</a>
+    </div>
+  </div>
+
+  <div class="card check" data-key="patan">
+    <input type="checkbox" aria-label="Patan hotel booked">
+    <div class="body">
+      <div class="top"><h3>2. Yamba Traditional Home, Patan <span class="tag">9.6</span></h3><span class="price">₹3,495</span></div>
+      <div>30 Dec, 1 night · Standard Double · breakfast included · 250 m from Patan Durbar Square</div>
+      <div class="muted" style="font-size:.9rem">Upgrade: Pahan Chhen (9.4, 50 m from the square) at ₹7,085. The listed room is twin beds, so confirm a double.</div>
+      <a class="btn" href="https://www.booking.com/searchresults.html?ss=Yamba+Traditional+Home+Patan&checkin=2026-12-30&checkout=2026-12-31&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR" target="_blank" rel="noopener">Open on Booking.com</a>
+    </div>
+  </div>
+
+  <div class="card check" data-key="boudha">
+    <input type="checkbox" aria-label="Boudha hotel booked">
+    <div class="body">
+      <div class="top"><h3>3. Sabila Boutique Hotel, Boudha <span class="tag">9.7</span></h3><span class="price">₹2,645</span></div>
+      <div>31 Dec, 1 night · breakfast included · 250 m from the stupa, about 1 km from Casino Pride</div>
+      <a class="btn" href="https://www.booking.com/searchresults.html?ss=Sabila+Boutique+Hotel+Boudha&checkin=2026-12-31&checkout=2027-01-01&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR" target="_blank" rel="noopener">Open on Booking.com</a>
+    </div>
+  </div>
+
+  <div class="card check" data-key="nagarkot">
+    <input type="checkbox" aria-label="Nagarkot hotel booked">
+    <div class="body">
+      <div class="top"><h3>4. The Fort Resort, Nagarkot <span class="tag">9.3</span></h3><span class="price">₹17,949</span></div>
+      <div>1 to 3 Jan, 2 nights · Double with Mountain View · breakfast included</div>
+      <div class="muted" style="font-size:.9rem">Cheaper: Hotel Green Valley Nagarkot (8.8, balcony, no breakfast) at ₹6,802 for 2 nights.</div>
+      <a class="btn" href="https://www.booking.com/searchresults.html?ss=The+Fort+Resort+Nagarkot&checkin=2027-01-01&checkout=2027-01-03&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR" target="_blank" rel="noopener">Open on Booking.com</a>
+    </div>
+  </div>
+
+  <div class="card check" data-key="cars">
+    <input type="checkbox" aria-label="Transfers arranged">
+    <div class="body">
+      <div class="top"><h3>5. Ask the hotels for transfers</h3><span class="price">≈ ₹8,000</span></div>
+      <div>Yamba: airport pickup on 30 Dec. Sabila: a car on 1 Jan for Boudha → Bhaktapur → Nagarkot. Fort Resort: a taxi back from Changu Narayan on 2 Jan, and the airport drop on 3 Jan at 12:30 PM.</div>
+    </div>
+  </div>
+
+  <div class="card check" data-key="casino">
+    <input type="checkbox" aria-label="Casino NYE checked">
+    <div class="body">
+      <div class="top"><h3>6. Check Casino Pride's NYE night</h3><span class="price">₹5,000 limit</span></div>
+      <div>Casino Pride is inside the Hyatt Regency, near Boudha. Ask about New Year's Eve entry or tickets and which poker games are running. Backup: Deltin Casino at the Marriott.</div>
+    </div>
+  </div>
+
+</div>
+
+<h2>Day by day</h2>
+<div>
+
+  <div class="day">
+    <div class="date"><div class="d">30</div><div class="m">Wed · Dec</div></div>
+    <div>
+      <h3>Land, and slow down in Patan</h3>
+      <ul>
+        <li>9:45 AM land. Pickup to Patan, about 45 minutes.</li>
+        <li>Afternoon: Patan Durbar Square, the Golden Temple, Kumbheshwar, and the hidden courtyards behind the square.</li>
+        <li>Sunset and dinner on a rooftop over the lit-up temples.</li>
+      </ul>
+      <div class="sleep">Sleep · Yamba Traditional Home</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="date"><div class="d">31</div><div class="m">Thu · Dec</div></div>
+    <div>
+      <h3>Valley views, butter lamps, New Year's poker</h3>
+      <ul>
+        <li>7 AM Swayambhunath for a view over the whole valley.</li>
+        <li>Brunch and a quiet afternoon in the Garden of Dreams.</li>
+        <li>Check in at Sabila. At dusk, walk around Boudhanath stupa together and light butter lamps.</li>
+        <li>Dinner on a Boudha rooftop, then New Year's Eve at Casino Pride. Thamel is 20 minutes away if you want a louder street party.</li>
+      </ul>
+      <div class="sleep">Sleep · Sabila Boutique Hotel</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="date"><div class="d">1</div><div class="m">Fri · Jan</div></div>
+    <div>
+      <h3>Bhaktapur, then up into the mountains</h3>
+      <ul>
+        <li>Late breakfast. Drive 40 minutes to Bhaktapur: Nyatapola temple, Pottery Square, and juju dhau (the famous local curd).</li>
+        <li>Rooftop lunch, then 40 minutes up to Nagarkot.</li>
+        <li>Sunset over the Himalayas, then dinner by a fire.</li>
+      </ul>
+      <div class="sleep">Sleep · The Fort Resort</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="date"><div class="d">2</div><div class="m">Sat · Jan</div></div>
+    <div>
+      <h3>Sunrise and a hidden temple</h3>
+      <ul>
+        <li>Sunrise from your room. Late December has the clearest mountain views of the year.</li>
+        <li>Hike downhill to Changu Narayan (3 to 4 hours), one of the valley's oldest temples and far quieter than the city squares. Taxi back.</li>
+        <li>Couples massage in the afternoon. Bonfire and stargazing at night.</li>
+      </ul>
+      <div class="sleep">Sleep · The Fort Resort</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="date"><div class="d">3</div><div class="m">Sun · Jan</div></div>
+    <div>
+      <h3>One more sunrise, then home</h3>
+      <ul>
+        <li>Sunrise, slow breakfast, a short walk.</li>
+        <li>Leave at 12:30 PM for the airport (1.5 hours, plus a buffer for traffic).</li>
+        <li>5:10 PM flight, landing in Delhi at 6:45 PM.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h2>Budget for two</h2>
+<div class="card">
+<table>
+  <tr><th>Item</th><th class="n">₹</th></tr>
+  <tr><td>Flights, IndiGo round trip <span class="src">live</span></td><td class="n">41,774</td></tr>
+  <tr><td>Yamba Traditional Home, 1 night <span class="src">live</span></td><td class="n">3,495</td></tr>
+  <tr><td>Sabila Boutique Hotel, 1 night <span class="src">live</span></td><td class="n">2,645</td></tr>
+  <tr><td>The Fort Resort, 2 nights <span class="src">live</span></td><td class="n">17,949</td></tr>
+  <tr><td>Cars and taxis <span class="src">estimate</span></td><td class="n">8,000</td></tr>
+  <tr><td>Food and drinks, breakfast included everywhere <span class="src">estimate</span></td><td class="n">12,000</td></tr>
+  <tr><td>Entry fees (SAARC rates) and couples massage <span class="src">estimate</span></td><td class="n">5,500</td></tr>
+  <tr><td>Poker, a fixed limit</td><td class="n">5,000</td></tr>
+  <tr class="total"><td>Total</td><td class="n">≈ 96,400</td></tr>
+</table>
+<p class="muted" style="margin:10px 0 0;font-size:.9rem">With Hotel Green Valley in Nagarkot instead: ≈ ₹85,200.</p>
+</div>
+
+<h2>Before you go</h2>
+<div class="grid2">
+  <div class="card"><h3>Documents</h3><p>No visa needed for Indians. Carry both passports anyway: the casino requires them.</p></div>
+  <div class="card"><h3>Money</h3><p>UPI works at many shops through Fonepay QR codes. Also carry a forex card, and check the current limits on bringing ₹200 and ₹500 notes into Nepal.</p></div>
+  <div class="card"><h3>Weather</h3><p>Sunny days around 18 to 20°C. Nights are close to freezing, colder in Nagarkot. Pack down jackets and warm layers.</p></div>
+  <div class="card"><h3>What's still an estimate</h3><p>Flights and hotels are live prices from 6 Nov. Transport, food, massage and the casino's NYE rules are not confirmed.</p></div>
+</div>
+
+<footer>
+  Prices from Google Flights and Booking.com on 6 Nov 2026, total for 2 adults, taxes included. Rates change daily.
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('#checklist .check').forEach(function(card){
+  var box = card.querySelector('input'), key = 'nepal-' + card.dataset.key;
+  try { box.checked = localStorage.getItem(key) === '1'; } catch(e){}
+  card.classList.toggle('done', box.checked);
+  box.addEventListener('change', function(){
+    card.classList.toggle('done', box.checked);
+    try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch(e){}
+  });
+});
+</script>
+</body>
+</html>
