@@ -379,18 +379,20 @@ ck.querySelectorAll('.check').forEach(function(el){
 
 document.getElementById('credits').innerHTML = 'Photos from Wikimedia Commons: ' +
   Object.keys(CREDITS).map(function(k){var c=CREDITS[k];return '<a href="https://commons.wikimedia.org/wiki/'+encodeURIComponent(c[2])+'" target="_blank" rel="noopener">'+esc(c[0])+'</a> ('+c[1]+')';}).join(', ') +
-  '. Map © OpenStreetMap contributors, © CARTO. Prices checked 6 Nov 2026; rates change daily.';
+  '. Map imagery © Esri, Maxar, Earthstar Geographics. Prices checked 6 Nov 2026; rates change daily.';
 
 /* ---------- map ---------- */
 var css = getComputedStyle(document.documentElement);
 function col(d){return css.getPropertyValue('--d'+d).trim();}
-var dark = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
 var map = L.map('map',{scrollWheelZoom:false, zoomControl:true});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/'+(dark?'dark_all':'rastertiles/voyager')+'/{z}/{x}/{y}{r}.png',{
-  attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/attributions">CARTO</a>', subdomains:'abcd', maxZoom:18
+var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
+L.tileLayer(ESRI+'World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+  attribution:'Imagery © Esri, Maxar, Earthstar Geographics', maxZoom:18
 }).addTo(map);
+L.tileLayer(ESRI+'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{maxZoom:18, opacity:.9}).addTo(map);
 
 var byId = {del:START}; STOPS.forEach(function(s){byId[s.id]=s;});
+var LINEC = {1:'#fbbf24',2:'#fb7185',3:'#2dd4bf',4:'#a5b4fc',5:'#e2e8f0'}; // bright enough for satellite imagery
 var DASH = {flight:'2 9', drive:'9 7', walk:'1 6', hike:'1 6'};
 function arc(a,b){
   var pts=[], mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2, dx=b[1]-a[1], dy=b[0]-a[0];
@@ -403,7 +405,7 @@ var lines = EDGES.map(function(e){
   if(e[2]==='flight') pts = e[0]==='del' ? arc(a,b) : arc(a,b);
   else if(e[0]==='changu' && e[1]==='nagarkot') pts=[a,[27.705,85.47],b];
   else pts=[a,b];
-  var ln = L.polyline(pts,{color:col(e[3]),weight:3.5,dashArray:DASH[e[2]],lineCap:'round',opacity:.9}).addTo(map);
+  var ln = L.polyline(pts,{color:LINEC[e[3]],weight:4,dashArray:DASH[e[2]],lineCap:'round',opacity:.95}).addTo(map);
   ln._day = e[3]; return ln;
 });
 
