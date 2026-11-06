@@ -73,6 +73,7 @@ img{display:block;max-width:100%}
 /* map pins */
 .pin{width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font:700 13px/30px Inter,sans-serif;text-align:center;border:2.5px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .2s}
 .pin.active{transform:scale(1.35)}
+@media (max-width:600px){.pin{transform:scale(.78)}.pin.active{transform:scale(1.1)}}
 .pin.start{background:#334155;font-size:15px}
 .pin.dim{opacity:.35}
 .leaflet-popup-content{margin:0;width:220px!important}
@@ -379,20 +380,19 @@ ck.querySelectorAll('.check').forEach(function(el){
 
 document.getElementById('credits').innerHTML = 'Photos from Wikimedia Commons: ' +
   Object.keys(CREDITS).map(function(k){var c=CREDITS[k];return '<a href="https://commons.wikimedia.org/wiki/'+encodeURIComponent(c[2])+'" target="_blank" rel="noopener">'+esc(c[0])+'</a> ('+c[1]+')';}).join(', ') +
-  '. Map imagery © Esri, Maxar, Earthstar Geographics. Prices checked 6 Nov 2026; rates change daily.';
+  '. Map © Esri, HERE, Garmin, USGS, OpenStreetMap contributors. Prices checked 6 Nov 2026; rates change daily.';
 
 /* ---------- map ---------- */
 var css = getComputedStyle(document.documentElement);
 function col(d){return css.getPropertyValue('--d'+d).trim();}
 var map = L.map('map',{scrollWheelZoom:false, zoomControl:true});
 var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
-L.tileLayer(ESRI+'World_Imagery/MapServer/tile/{z}/{y}/{x}',{
-  attribution:'Imagery © Esri, Maxar, Earthstar Geographics', maxZoom:18
+L.tileLayer(ESRI+'World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
+  attribution:'Map © Esri, HERE, Garmin, USGS, OpenStreetMap contributors', maxZoom:18
 }).addTo(map);
-L.tileLayer(ESRI+'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{maxZoom:18, opacity:.9}).addTo(map);
 
 var byId = {del:START}; STOPS.forEach(function(s){byId[s.id]=s;});
-var LINEC = {1:'#fbbf24',2:'#fb7185',3:'#2dd4bf',4:'#a5b4fc',5:'#e2e8f0'}; // bright enough for satellite imagery
+var LINEC = {1:'#d97706',2:'#be123c',3:'#0f766e',4:'#4f46e5',5:'#475569'}; // the map is light in both themes
 var DASH = {flight:'2 9', drive:'9 7', walk:'1 6', hike:'1 6'};
 function arc(a,b){
   var pts=[], mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2, dx=b[1]-a[1], dy=b[0]-a[0];
@@ -425,7 +425,7 @@ STOPS.forEach(function(s){
     .bindPopup('<div class="pop">'+img+'<div><b>'+label+'. '+esc(s.title)+'</b>Day '+s.day+' · '+esc(s.time)+(s.approx?' · location approx.':'')+'<br><a href="#s-'+s.id+'" data-go="'+s.id+'">See details ↓</a></div></div>');
 });
 
-var valleyBounds = L.latLngBounds(STOPS.map(function(s){return s.ll;})).pad(0.12);
+var valleyBounds = L.latLngBounds(STOPS.map(function(s){return s.ll;})).pad(innerWidth < 600 ? 0.02 : 0.12);
 var wholeBounds = L.latLngBounds([START.ll].concat(STOPS.map(function(s){return s.ll;}))).pad(0.08);
 map.fitBounds(wholeBounds);
 var wide = matchMedia('(min-width:980px)');
